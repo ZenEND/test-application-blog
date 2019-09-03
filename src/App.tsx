@@ -2,15 +2,7 @@ import React, { Dispatch } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStyles } from '@material-ui/core/styles';
-
-
-import { useStyles, withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-
+import "./styles/global.sass"
 
 class App extends React.Component {
   private Index() {
@@ -23,41 +15,19 @@ class App extends React.Component {
     return (<div>Users</div>)
   }
   public render() {
-    const styles = {
-      root: {
-        flexGrow: 1,
-      },
-      title: {
-        flexGrow: 1,
-      },
-      button: {
-        margin: "0 10px"
-      },
-      link:{
-        color : "white",
-        textDecoration : "none",
-      }
-    };
     return (
       <Router>
-        <div style={styles.root}>
-          <AppBar position="static">
-            <Toolbar>
-              <Typography variant="h6" style={styles.title}>
-                News
-              </Typography>
-              <Button style={styles.button} color="inherit">
-                <Link style={styles.link} to="/">
-                  Posts
-                </Link>
-              </Button>
-              <Button style={styles.button} color="inherit">
-                <Link style={styles.link} to="/about">
-                  Latest Posts
-                </Link>
-              </Button>
-            </Toolbar>
-          </AppBar>
+        <div className="toolbar">
+          <button>
+            <Link to="/">
+              Posts
+            </Link>
+          </button>
+          <button  color="inherit">
+            <Link to="/about">
+              Latest Posts
+            </Link>
+          </button>
         </div>
         <div>
           <Route path="/" exact component={this.Index} />
