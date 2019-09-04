@@ -1,28 +1,28 @@
 import {
-    ADD_PARAGRAPH, addParagraphAction, Paragraph
-} from "../../constants/action-types";
+    ADD_PARAGRAPH, addParagraphAction, Paragraph,
+} from '../../constants/action-types';
 
-export type AppState = {
-    paragraphs: Paragraph[];
+export interface AppState {
+  paragraphs: Paragraph[];
 }
 
 const initialState = {
-    paragraphs: []
+  paragraphs: [],
 };
 
 function rootReducer(state: AppState = initialState, action: addParagraphAction) {
-    switch (action.type) {
-        case ADD_PARAGRAPH:
-            return {
-                ...state,
-                paragraphs: [
-                    ...state.paragraphs,
-                    action.payload
-                ]
-            };
-        default:
-            return state;
-    }
-};
+  switch (action.type) {
+    case ADD_PARAGRAPH:
+      return {
+        ...state,
+        paragraphs: [
+          ...state.paragraphs,
+          action.payload,
+        ],
+      };
+    default:
+      return state;
+  }
+}
 
 export default rootReducer;

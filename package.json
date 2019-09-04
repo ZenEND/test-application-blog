@@ -5,7 +5,9 @@
   "main": "index.tsx",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "lint": "tslint -p tsconfig.json -c tslint.json --force",
+    "lint:fix": "npm run lint -- --fix"
   },
   "keywords": [],
   "author": "",
@@ -28,10 +30,14 @@
     "@types/react-redux": "^7.0.5",
     "@types/redux-thunk": "^2.1.0",
     "@types/uuid": "^3.4.4",
+    "global": "^4.4.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-router-dom": "^5.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^1.0.0",
+    "tslint": "^5.19.0",
+    "typescript": "^3.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -44,19 +50,16 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@types/react-dom": "^16.8.3",
-    "@typescript-eslint/eslint-plugin": "^2.1.0",
-    "@typescript-eslint/parser": "^2.1.0",
     "babel-loader": "^8.0.5",
-    "eslint": "^6.3.0",
-    "eslint-plugin-react": "^7.14.3",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "prop-types": "^15.7.2",
     "react-hot-loader": "^4.6.5",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
-    "sass-loader": "^7.2.0",
     "sass": "^1.22.10",
+    "sass-loader": "^7.2.0",
+    "tslint-config-airbnb": "^5.11.1",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"

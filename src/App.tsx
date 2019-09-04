@@ -1,19 +1,10 @@
-import React, { Dispatch } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { connect } from "react-redux";
 import { createStyles } from '@material-ui/core/styles';
-import "./styles/global.sass"
+import react, { Dispatch } from 'react';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import './styles/global.sass';
 
 class App extends React.Component {
-  private Index() {
-    return (<div>Index</div>)
-  }
-  private About() {
-    return (<div>About</div>)
-  }
-  private Users() {
-    return (<div>Users</div>)
-  }
   public render() {
     return (
       <Router>
@@ -37,7 +28,15 @@ class App extends React.Component {
       </Router>
     );
   }
+  private Index() {
+    return (<div>Index</div>);
+  }
+  private About() {
+    return (<div>About</div>);
+  }
+  private Users() {
+    return (<div>Users</div>);
+  }
 }
-
 
 export default App;
