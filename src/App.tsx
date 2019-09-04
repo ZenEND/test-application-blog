@@ -1,5 +1,5 @@
 import { createStyles } from '@material-ui/core/styles';
-import react, { Dispatch } from 'react';
+import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import './styles/global.sass';
