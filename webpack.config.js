@@ -1,10 +1,11 @@
-var path = require('path');
+require("@babel/polyfill");
+const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
-  entry: "./src/index.tsx",
+  entry: ["@babel/polyfill","./src/index.tsx"],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js',
@@ -43,7 +44,8 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./index.html",
-      filename: "./index.html"
+      filename: "./index.html",
+      regenerator: true
     })
   ]
 };

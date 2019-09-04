@@ -1,3 +1,31 @@
+$grey-light: #525252
+$grey: #414141
+$dark: #313131
+$red: #ca3e47
+
+body
+  background-color: $grey
+
+
 .toolbar
-  color: red
-  background-color: red
+  height: 50px
+  background-color: $red
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  a
+    text-decoration: none
+    color: black
+    font-size: 20px
+  button
+    border: none
+    padding: 5px
+    background: none
+    &:hover
+      background-color: red
+      transition: 1s
+
+.content
+  width: 60%
+  margin: auto
+  background: $grey-light

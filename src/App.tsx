@@ -1,8 +1,10 @@
-import { createStyles } from '@material-ui/core/styles';
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import './styles/global.sass';
+import Index from './pages/index.tsx'
+import LatestPosts from './pages/latest.tsx'
+
 
 class App extends React.Component {
   public render() {
@@ -15,21 +17,17 @@ class App extends React.Component {
             </Link>
           </button>
           <button  color="inherit">
-            <Link to="/about">
+            <Link to="/latest">
               Latest Posts
             </Link>
           </button>
         </div>
-        <div>
-          <Route path="/" exact component={this.Index} />
-          <Route path="/about/" component={this.About} />
-          <Route path="/users/" component={this.Users} />
+        <div className="content">
+          <Route path="/" exact component={Index} />
+          <Route path="/latest/" component={LatestPosts} />
         </div>
       </Router>
     );
-  }
-  private Index() {
-    return (<div>Index</div>);
   }
   private About() {
     return (<div>About</div>);
